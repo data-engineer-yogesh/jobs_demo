@@ -1,43 +1,31 @@
-# jobs_demo
 
-Databricks Lakeflow Jobs Demo
-This repository demonstrates the core features of Databricks Lakeflow Jobs through practical examples. It is designed to help data engineers understand how to build, configure, and orchestrate production-ready workflows using Lakeflow Jobs.
+## Databricks Lakeflow Jobs Demo
 
-------------------------
+This repository is a hands-on demo project that explores the core features of Databricks Lakeflow Jobs. It is intended for learning and understanding how different task types and workflow controls work in Databricks.
 
-### Project Overview
-This project covers the following Lakeflow Jobs concepts with hands-on examples:
+The examples in this repository are intentionally simple and easy to follow. Each workflow demonstrates a specific Lakeflow Jobs feature rather than building a complete production pipeline. The goal is to help beginners and data engineers quickly understand the fundamentals of Databricks job orchestration before applying these concepts to real-world projects.
 
-1.  Overview and Demo of Lakeflow Jobs
-2.  Classic Job Compute
-3.  Python Script Tasks
-4.  Passing Parameters into Notebook Tasks
-5.  Passing Task Values Between Notebook Tasks
-6.  Passing Parameters into Python Script Tasks
-7.  Task Failures and Dependencies
-8.  Concurrent Executions
-9.  Branching Control with the If-Else Task
-10. Running Tasks in a Loop with the For Each Task
+### What You'll Learn
 
+- Lakeflow Jobs overview
+- Classic Job Compute
+- Python Script Tasks
+- Passing parameters to Notebook Tasks
+- Passing parameters to Python Script Tasks
+- Passing task values between Notebook Tasks
+- Task dependencies and failure handling
+- Concurrent task execution
+- Conditional execution using If-Else Tasks
+- Iteration using For Each Tasks
+
+```
+
+Note:
+This repository is a learning resource and demonstration project.
+The workflows are intentionally kept small and focused so that each Lakeflow Jobs feature can be understood independently.
+
+```
 ---------------------
-
-
-### Learning Outcomes
-After completing this project, you will understand:
-
-- Creating Lakeflow Jobs
-- Configuring Job Compute
-- Notebook Tasks
-- Python Script Tasks - pass the values 
-- Parameter Passing - pass the values uing paramter's 
-- Task Values - pass the task values and print in the notebook
-- Dependencies - how two or more task depends on each others 
-- Parallel Execution - tow parrall excutions 
-- Conditional Branching - if-else condtional logic flow 
-- For Each Loops - lloping the task
-- End-to-End Workflow Orchestration
-
--------
 
 ## Technologies Used :
 - Databricks
