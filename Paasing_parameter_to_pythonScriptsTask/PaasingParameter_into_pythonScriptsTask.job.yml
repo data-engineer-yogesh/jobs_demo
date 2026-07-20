@@ -1,0 +1,20 @@
+resources:
+  jobs:
+    PassingParameter_into_pythonScriptsTask:
+      name: PassingParameter_into_pythonScriptsTask
+      tasks:
+        - task_key: Python_Script
+          spark_python_task:
+            python_file: /Workspace/Users/data.engineer.yogesh@gmail.com/jobs_demo/Paasing_parameter_to_pythonScriptsTask/PythonScriptsTask.py
+            parameters:
+              - Yogesh
+              - "{{job.id}}"
+              - "{{workspace.id}}"
+          environment_key: Default
+      queue:
+        enabled: true
+      environments:
+        - environment_key: Default
+          spec:
+            environment_version: "5"
+      performance_target: PERFORMANCE_OPTIMIZED
