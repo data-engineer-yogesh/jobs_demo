@@ -1,0 +1,27 @@
+resources:
+  jobs:
+    If_else_Task_demo:
+      name: If_else_Task_demo
+      tasks:
+        - task_key: if_else_condtion
+          condition_task:
+            op: EQUAL_TO
+            left: yes
+            right: yes
+        - task_key: if_task_notebooks
+          depends_on:
+            - task_key: if_else_condtion
+              outcome: "true"
+          notebook_task:
+            notebook_path: /Workspace/Users/data.engineer.yogesh@gmail.com/jobs_demo/If_else_Task_demo/If_notebook_no_1
+            source: WORKSPACE
+        - task_key: Else_notebook
+          depends_on:
+            - task_key: if_else_condtion
+              outcome: "false"
+          notebook_task:
+            notebook_path: /Workspace/Users/data.engineer.yogesh@gmail.com/jobs_demo/If_else_Task_demo/Eles_notebook_no_2
+            source: WORKSPACE
+      queue:
+        enabled: true
+      performance_target: PERFORMANCE_OPTIMIZED
