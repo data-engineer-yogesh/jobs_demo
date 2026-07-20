@@ -1,0 +1,20 @@
+resources:
+  jobs:
+    Jobs_demo_classic_job_compute:
+      name: Jobs_demo_classic_job_compute
+      tasks:
+        - task_key: Notebook_no_1
+          notebook_task:
+            notebook_path: /Workspace/Users/data.engineer.yogesh@gmail.com/jobs_demo/classic_job_compute/Notebook_no_1
+            base_parameters:
+              football_team: '"khandoba talim"'
+            source: WORKSPACE
+        - task_key: Notebook_no_2
+          depends_on:
+            - task_key: Notebook_no_1
+          notebook_task:
+            notebook_path: /Workspace/Users/data.engineer.yogesh@gmail.com/jobs_demo/classic_job_compute/Notebook_no_2
+            source: WORKSPACE
+      queue:
+        enabled: true
+      performance_target: PERFORMANCE_OPTIMIZED
