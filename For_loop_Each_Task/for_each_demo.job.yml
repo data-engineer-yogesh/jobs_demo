@@ -1,0 +1,25 @@
+resources:
+  jobs:
+    for_each_demo:
+      name: for_each_demo
+      tasks:
+        - task_key: upstream_notebook
+          notebook_task:
+            notebook_path: /Workspace/Users/data.engineer.yogesh@gmail.com/jobs_demo/For_loop_Each_Task/input_notebook
+            source: WORKSPACE
+        - task_key: for_each_task
+          depends_on:
+            - task_key: upstream_notebook
+          for_each_task:
+            inputs: "{{tasks.upstream_notebook.values.regions}}"
+            concurrency: 2
+            task:
+              task_key: for_each_task_iteration
+              notebook_task:
+                notebook_path: /Workspace/Users/data.engineer.yogesh@gmail.com/jobs_demo/For_loop_Each_Task/iterative_notebook
+                base_parameters:
+                  regoin_name: "{{input}}"
+                source: WORKSPACE
+      queue:
+        enabled: true
+      performance_target: PERFORMANCE_OPTIMIZED
